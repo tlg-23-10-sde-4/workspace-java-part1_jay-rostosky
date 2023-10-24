@@ -28,9 +28,11 @@ public class Employee {
 
     // constructors
     public Employee() {
+        super();
     }
 
     public Employee(String name, LocalDate hireDate) {
+        super();
         setName(name);
         setHireDate(hireDate);
     }
