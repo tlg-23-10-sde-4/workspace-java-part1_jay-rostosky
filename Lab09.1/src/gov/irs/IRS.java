@@ -20,7 +20,9 @@ public class IRS {
 
     public void collectTaxes() {
         for (int i = 0; i < currentIndex; i++) {
+            payers[i].fileReturn();
             payers[i].payTaxes();
+            System.out.println();
         }
     }
     
