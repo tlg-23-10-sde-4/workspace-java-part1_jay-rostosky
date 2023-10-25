@@ -9,7 +9,11 @@
 package com.hr.corp.client;
 
 import com.hr.corp.Corporation;
+import com.hr.personnel.Executive;
+import com.hr.personnel.HourlyEmployee;
+import com.hr.personnel.SalariedEmployee;
 import gov.irs.IRS;
+import java.time.LocalDate;
 
 class TaxClient {
     
@@ -22,13 +26,11 @@ class TaxClient {
         irs.register(corp);
 
         // create Employees (Hourly or Salaried), and register them with the IRS
-        // TODO: uncomment this block once you make employees taxpayers also
-        /*
         irs.register(new HourlyEmployee("Jason",  LocalDate.of(1990, 8, 24), 22.5, 40.0));
         irs.register(new SalariedEmployee("Tina", LocalDate.of(2000, 2, 2), 1250.0));
         irs.register(new HourlyEmployee("John",   LocalDate.of(2010, 10, 11), 25.0, 40.0));
         irs.register(new SalariedEmployee("Jane", LocalDate.of(2005, 7, 1), 1500.0));
-        */
+        irs.register(new Executive("Jay",         LocalDate.of(1986, 12, 5), 100_000.0));
 
         // IRS collects taxes
         System.out.println("IRS collects taxes:");
