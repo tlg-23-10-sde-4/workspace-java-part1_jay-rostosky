@@ -16,7 +16,7 @@ public class Executive extends SalariedEmployee {
         super(name, hireDate, salary);
     }
 
-    @Override  // interface TaxPayer
+    @Override  // interface TaxPayer (opt-in)
     public void fileReturn() {
         System.out.println("Return filed electronically");
     }

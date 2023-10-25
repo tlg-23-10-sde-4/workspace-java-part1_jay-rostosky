@@ -3,6 +3,8 @@ package com.hr.personnel;
 import java.time.LocalDate;
 
 public class SalariedEmployee extends Employee {
+    public static final double STANDARD_DEDUCTION = 10_000.0;
+
     private double salary;
 
     // constructors
@@ -27,10 +29,15 @@ public class SalariedEmployee extends Employee {
         System.out.println(getName() + " is paid salary " + payment);
     }
 
-    @Override  // interface TaxPayer
+    @Override  // interface TaxPayer (required)
     public void payTaxes() {
         double taxes = getSalary() * SALARIED_TAX_RATE;
         System.out.printf("%s paid taxes of %s\n", getName(), taxes);
+    }
+
+    @Override  // interface TaxPayer (opt-in)
+    public double getStandardDeduction() {
+        return STANDARD_DEDUCTION;
     }
 
     public void takeVacation() {
