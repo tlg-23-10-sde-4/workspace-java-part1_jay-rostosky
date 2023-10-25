@@ -61,6 +61,25 @@ public class Department {
         }
     }
 
+    /*
+     * "Forced" vacation, i.e., for all employees that take vacation, make them do this.
+     */
+    public void holidayBreak() {
+        for (int i = 0; i < currentIndex; i++) {
+            // if employees[i] is really pointing to a SalariedEmployee object
+            // downcast the reference to more specific type SalariedEmployee
+            // this allows me to call SalariedEmployee-specific methods, like takeVacation()
+            if (employees[i] instanceof SalariedEmployee) {
+                // downcast-and-method-call in one shot
+                // ((SalariedEmployee) employees[i]).takeVacation();
+
+                // explicit downcast to new reference 'semp'
+                SalariedEmployee semp = (SalariedEmployee) employees[i];
+                semp.takeVacation();
+            }
+        }
+    }
+
     // helper method to add an Employee to the array
     public void addEmployee(Employee emp) {
         employees[currentIndex++] = emp;
