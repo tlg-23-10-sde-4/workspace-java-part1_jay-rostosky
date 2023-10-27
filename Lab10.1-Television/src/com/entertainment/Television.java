@@ -79,7 +79,6 @@ public class Television {
         return brand;
     }
 
-
     public void setBrand(String brand) throws InvalidBrandException {
         boolean valid = false;
 
@@ -95,7 +94,7 @@ public class Television {
 
     // VALID_BRANDS looks like this ["Samsung", "Sony", "LG", "Toshiba"]
     // Lab p.81 (very bottom of notes): why does it make sense for this method to be static?
-    public static boolean isValidBrand(String brand) {
+    private static boolean isValidBrand(String brand) {
         boolean valid = false;
 
         for (String currentBrand : VALID_BRANDS) {

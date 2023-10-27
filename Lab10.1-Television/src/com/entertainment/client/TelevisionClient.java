@@ -19,7 +19,7 @@ class TelevisionClient {
 
         // create an instance of Television and set its properties via setter calls
         Television tv1 = new Television();
-        tv1.setBrand("Magnavox");
+        tv1.setBrand("Samsung");
         tv1.setVolume(32);
         tv1.setDisplay(PLASMA);
 

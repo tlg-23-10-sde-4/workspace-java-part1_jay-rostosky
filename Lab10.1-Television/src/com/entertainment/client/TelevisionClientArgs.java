@@ -57,7 +57,7 @@ class TelevisionClientArgs {
             System.out.println(tv);
         }
         catch (Exception e) {
-            System.out.println(e.getMessage() + "\n");  // extracts the thrower's reason string
+            System.out.println(e.getMessage());  // extracts the reason string
             printUsage();
         }
     }
