@@ -25,7 +25,6 @@ class ShapeClient {
         }
 
         System.out.printf("\nThe total area is %s\n\n", totalArea);
-
         System.out.println(((Triangle) shapes[3]).diagram());
     }
 }
