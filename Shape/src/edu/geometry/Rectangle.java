@@ -9,15 +9,16 @@ public class Rectangle implements Shape {
         this.width = width;
     }
 
+    @Override  // interface Shape
     public double area() {
-        return getLength() * getWidth();
+        return length() * width();
     }
 
-    public double getLength() {
+    public double length() {
         return length;
     }
 
-    public double getWidth() {
+    public double width() {
         return width;
     }
 }
