@@ -13,6 +13,7 @@ import com.javatunes.catalog.InMemoryCatalog;
 import com.javatunes.catalog.MusicCategory;
 import com.javatunes.catalog.MusicItem;
 import java.util.Collection;
+import java.util.Map;
 
 class InMemoryCatalogTest {
 
@@ -31,7 +32,7 @@ class InMemoryCatalogTest {
         // testFindByKeyword();
         // testFindByCategory();
         // testSize();
-        testGetAll();
+        // testGetAll();
 
         // TASK method tests
 
@@ -40,8 +41,15 @@ class InMemoryCatalogTest {
         // testNumberInGenre();
         // testGetAveragePrice();
         // testFindCheapestInGenre();
-
         // testHasGenre();
+        testGetAllGenreMap();
+    }
+
+    private static void testGetAllGenreMap() {
+        InMemoryCatalog catalog = new InMemoryCatalog();
+
+        Map<MusicCategory,Collection<MusicItem>> genreMap = catalog.getAllGenreMap();
+        dump(genreMap);
     }
 
     private static void testHasGenre() {
@@ -111,6 +119,14 @@ class InMemoryCatalogTest {
     private static void dump(Collection<MusicItem> items) {
         for (MusicItem item : items) {
             System.out.println(item);
+        }
+    }
+
+    private static void dump(Map<MusicCategory,Collection<MusicItem>> map) {
+        for (var entry : map.entrySet()) {
+            System.out.println(entry.getKey());
+            dump(entry.getValue());
+            System.out.println();
         }
     }
 }
