@@ -10,6 +10,7 @@ package com.javatunes.catalog;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 // OF COURSE THIS CLASS DOESN'T COMPILE
@@ -100,7 +101,7 @@ public class InMemoryCatalog implements Catalog {
 
     @Override
     public Collection<MusicItem> getAll() {
-        return null;
+        return Collections.unmodifiableCollection(catalogData);
     }
 
     /**

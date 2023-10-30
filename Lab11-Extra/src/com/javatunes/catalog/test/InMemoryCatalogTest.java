@@ -31,7 +31,7 @@ class InMemoryCatalogTest {
         // testFindByKeyword();
         // testFindByCategory();
         // testSize();
-        // testGetAll();
+        testGetAll();
 
         // TASK method tests
 
@@ -41,7 +41,7 @@ class InMemoryCatalogTest {
         // testGetAveragePrice();
         // testFindCheapestInGenre();
 
-        testHasGenre();
+        // testHasGenre();
     }
 
     private static void testHasGenre() {
@@ -100,6 +100,10 @@ class InMemoryCatalogTest {
     }
 
     private static void testGetAll() {
+        InMemoryCatalog catalog = new InMemoryCatalog();
+
+        Collection<MusicItem> allItems = catalog.getAll();
+        allItems.clear();  // should throw exception
     }
 
 
