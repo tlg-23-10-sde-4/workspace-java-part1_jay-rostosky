@@ -22,8 +22,8 @@ public class PoemClient {
      * To run one method at a time, uncomment the call to the one you want to execute.
      */
     public static void main(String[] args) {
-        readPoem();
-        // writePoem();
+        // readPoem();
+        writePoem();
     }
 
     /**
@@ -77,8 +77,14 @@ public class PoemClient {
                 "What will he be without it?\n" +
                 "Only time will tell";
 
-        // Files.writeString(Path.of("haiku.txt"), haiku);
+        try {
+            Files.writeString(Path.of("haiku.txt"), haiku);
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
 
+        /*
         try (PrintWriter writer = new PrintWriter(new FileWriter("haiku.txt"))) {
             writer.println("The beard is now gone");
             writer.println("What will he be without it?");
@@ -87,5 +93,6 @@ public class PoemClient {
         catch (IOException e) {
             e.printStackTrace();
         }
+        */
     }
 }
